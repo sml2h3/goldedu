@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix'=>'admin','middleware'=>'web'],function(){
+    Route::post('login','Admin\UserController@login');
+});
