@@ -4,7 +4,7 @@
 
 $(function () {
     bindCart();
-    cartInI();
+    // cartInI();
     setCartTittle();
 });
 function bindCart() {
