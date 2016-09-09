@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CommonController;
 
 use App\Http\Model\Admin;
 use Crypt,Redirect;
+use Illuminate\Support\Facades\Input;
 class UserController extends CommonController
 {
     //执行动作
@@ -26,20 +27,22 @@ class UserController extends CommonController
                     $decode_pass = Crypt::decrypt($result->edu_pass);
                     if ($decode_pass === $pass){
                         //登录成功,将用户信息存入session
-                        session(['username'=>$user,'password'=>$result->pass]);
+                        session(['username'=>$user,'password'=>$result->edu_pass]);
                         //这里需要根据权限获取menu列表
 
                         //获取menu列表结束
-                        return redirect('admin.dash');
+                        return redirect('admin/dash');
                     }else{
-                        return redirect('admin.index')->with('msg','账号或者密码错误');
+                        return redirect('admin/index')->with('msg','账号或者密码错误');
                     }
+                }else{
+                    return redirect('admin/index')->with('msg','账号不存在');
                 }
             }else{
-                return redirect('admin.index')->with('msg','请填写用户名或密码');
+                return redirect('admin/index')->with('msg','请填写用户名或密码');
             }
         }else{
-            return redirect('admin.index')->with('msg','请填写用户名、密码或验证码');
+            return redirect('admin/index')->with('msg','请填写用户名、密码或验证码');
         }
     }
 }

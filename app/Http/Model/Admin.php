@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Model\;
+namespace App\Http\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model
 {
-    protected $table = 'edu_database';
+    protected $table = 'admin';
     protected $primaryKey = 'Id';
     public $timestamps = 'false';
 }
