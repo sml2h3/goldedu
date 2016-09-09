@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4a0e05de55dbc38515c6d92c4b1242d6",
-    "content-hash": "c291f2c3ad512d3c35297e431f88696e",
+    "hash": "c284a9c122da36c99a8b6597bdce7aa6",
+    "content-hash": "8b1485987e7c5949da82435d403e52e8",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -160,49 +160,6 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
-        },
-        {
-            "name": "fook/laravel-xunsearch",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fooklook/laravel-xunsearch.git",
-                "reference": "22229b95a494f3560659d93342611b36da8f5934"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/fooklook/laravel-xunsearch/22229b95a494f3560659d93342611b36da8f5934.zip",
-                "reference": "22229b95a494f3560659d93342611b36da8f5934",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "type": "php",
-            "autoload": {
-                "psr-4": {
-                    "Fook\\Xunsearch\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "fooklook",
-                    "email": "xiashuo.he@foxmail.com"
-                }
-            ],
-            "description": "xunsearch搜索引擎SDK开发laravel版本",
-            "keywords": [
-                "engine",
-                "laravel5",
-                "sdk",
-                "search",
-                "xunsearch"
-            ],
-            "time": "2015-12-16 11:37:35"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3198,9 +3155,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "fook/laravel-xunsearch": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
