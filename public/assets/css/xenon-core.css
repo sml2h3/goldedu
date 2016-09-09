@@ -660,7 +660,7 @@ footer.main-footer .go-up a,
   clear: both;
 }
 body {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
 }
 a {
   outline: none !important;
@@ -1024,6 +1024,7 @@ body {
   bottom: 0;
   width: inherit;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .page-body.right-sidebar .sidebar-menu.fixed .sidebar-menu-inner {
   left: auto;
