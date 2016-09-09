@@ -1,38 +1,39 @@
 $main-color: #95cd62;
-body{
+body.out-put{
   background: #fff;
-}
-header{
-  line-height:50px;
-  background: #666;
-  color: #fff;
-  font-weight: bold;
-  padding-left: 20px;
-  font-size:25px;
-  //border-radius: 0 0 5px 5px;
-  margin-bottom: 20px;
-}
-footer{
-  position: fixed;
-  bottom:0;
-  width:100%;
-  background: #666;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right:50px;
-  //border-radius: 5px 5px 0 0;
-  //box-shadow: 0 0 50px rgba(0,0,0,0.2);
-  .btn{
-    font-size:14px;
-    margin: 0;
-    color: #666;
-    background: #fff;
+  header{
+    line-height:50px;
+    background: #666;
+    color: #fff;
     font-weight: bold;
-    padding: 10px 15px;
+    padding-left: 20px;
+    font-size:25px;
+    //border-radius: 0 0 5px 5px;
+    margin-bottom: 20px;
+  }
+  footer{
+    position: fixed;
+    bottom:0;
+    width:100%;
+    background: #666;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right:50px;
+    //border-radius: 5px 5px 0 0;
+    //box-shadow: 0 0 50px rgba(0,0,0,0.2);
+    .btn{
+      font-size:14px;
+      margin: 0;
+      color: #666;
+      background: #fff;
+      font-weight: bold;
+      padding: 10px 15px;
+    }
   }
 }
+
 ::-webkit-scrollbar{
   width:0;
 }
