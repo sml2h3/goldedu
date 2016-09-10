@@ -1,0 +1,17 @@
+.private-set{
+  .container-fluid{
+    background: #fff;
+  }
+  .col-md-12{
+    img{
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+  }
+  .col-md-11{
+    ul{
+      list-style-type:none;
+      margin-left: 20px;
+    }
+  }
+}
