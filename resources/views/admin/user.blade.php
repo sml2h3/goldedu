@@ -131,7 +131,7 @@
                         <h4>用户管理</h4>
                         <hr>
                         <div class="col-md-12 col-xs-12">
-                            <button class="btn btn-primary" type="button" id="adduser_button" onclick="$('#addUsermodal').modal()"><i class="fa fa-plus"></i>添加用户</button>
+                            <button class="btn btn-primary" type="button" id="adduser_button"><i class="fa fa-plus"></i>添加用户</button>
                         </div>
                         <table class="table table-hover user_list">
                             <tbody><tr>
@@ -171,79 +171,46 @@
                             </ul>
                         </div>
                         <input id="changeId" type="hidden" value="">
+                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="power_change_box">
+                            <div class="modal-dialog">
+                                <div class="box box-warning">
+                                    <div class="box-body box-profile">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                    ×
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <select class="form-control" id="power_change_select">
+                                                            <option value="0">超级管理员</option>
+                                                            <option value="1">普通管理员</option>
+                                                            <option value="2">普通用户</option>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                                </button>
+                                                <button type="button" class="btn btn-primary" id="change_button">
+                                                    提交更改
+                                                </button>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="power_change_box">
-    <div class="modal-dialog">
-        <div class="box box-warning">
-            <div class="box-body box-profile">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <select class="form-control" id="power_change_select">
-                                    <option value="0">超级管理员</option>
-                                    <option value="1">普通管理员</option>
-                                    <option value="2">普通用户</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                        </button>
-                        <button type="button" class="btn btn-primary" id="change_button">
-                            提交更改
-                        </button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="modal fade" id="addUsermodal" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="box box-success">
-            <div class="box-body box-profile">
-                <div class="modal-content">
-                    <div class="modal-header" style="border:none">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                        <h4 class="modal-title">添加用户</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="user_input">新用户名</label>
-                                <input type="text" class="form-control" placeholder="新用户名" id="user_input">
-                            </div>
-                            <div class="form-group">
-                                <label for="pwd_input">密码</label>
-                                <input type="password" class="form-control" placeholder="密码" id="pwd_input">
-                            </div>
-                            <div class="form-group">
-                                <label for="power_select">用户权限</label>
-                                <select class="form-control" id="power_select">
-                                    <option value="0">超级管理员</option>
-                                    <option value="1">普通管理员</option>
-                                    <option value="2">普通用户</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-                        <button type="button" class="btn btn-primary" id="adduser">提交注册</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div>
-        </div>
-    </div><!-- /.modal-dialog -->
-</div>
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js" defer async></script>
@@ -255,14 +222,5 @@
 <!--<script src="assets/js/xenon-widgets.js" defer async></script>-->
 <script src="assets/js/toastr/toastr.min.js" defer async></script>
 <script src="assets/js/xenon-custom.js" defer async></script>
-<script>
-    function change(Id,type){
-        $('#changeId').val(Id);
-        $('#power_change_select').val(type);
-        $('#power_change_box').modal({
-            keyboard:false
-        });
-    }
-</script>
 </body>
 </html>

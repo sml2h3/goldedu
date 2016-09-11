@@ -13,6 +13,25 @@ use Crypt,Redirect;
 use Illuminate\Support\Facades\Input;
 class UserController extends CommonController
 {
+    private $user_info = array();
+    public function __construct()
+    {
+        $result = Admin::where('edu_name',session('username'))->first();
+        if ($result){
+
+            $this->user_info = array(
+                'username' => $result->edu_name,
+                'password' => $result->edu_pass,
+                'is_super' => $result->edu_is_super,
+                'permission' => $result ->edu_permission,
+                'login_time' => $result ->edu_login_time,
+                'login_num' => $result ->edu_login_num
+            );
+        }else{
+            session(['username'=>'','password'=>'']);
+            return redirect('admin/index')->with('msg','用户状态失效,请重新登陆');
+        }
+    }
     //执行动作
         //登陆
     public function login(){
@@ -43,6 +62,13 @@ class UserController extends CommonController
             }
         }else{
             return redirect('admin/index')->with('msg','请填写用户名、密码或验证码');
+        }
+    }
+    public function userAction($action){
+        switch ($action){
+            case 'add':
+                return $this->user_info['username'];
+                break;
         }
     }
 }

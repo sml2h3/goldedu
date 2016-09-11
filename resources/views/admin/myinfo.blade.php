@@ -134,8 +134,8 @@
                     <div class="col-md-12 col-xs-12">
                         <img src="assets/images/user-4.png">
                     </div>
-                    <div class="col-md-11 col-xs-12">
-                        <button type="button" class="btn btn-link" onclick="$('#editHead').modal()">修改头像</button>
+                    <div class="col-md-11 col-xs-12 col-md-offset-1">
+                        <button type="button" class="btn btn-link">修改头像</button>
                     </div>
                 </div>
                 <div class="col-md-11 col-xs-12">
@@ -160,7 +160,7 @@
                     <p>修改更复杂的密码有助于您的账号被盗用,建议您定期更换密码，设置一个包含字母，符号或数字中至少两项且长度超过6位的密码。</p>
                 </div>
                 <div class="col-md-1">
-                    <button class="btn btn-link" type="button" onclick="$('#editPWD').modal()">修改密码</button>
+                    <button class="btn btn-link" type="button">修改密码</button>
                 </div>
             </div>
             <div class="col-md-12 setlist">
@@ -193,7 +193,7 @@
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <div class="input-group has-warning">
+                        <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-phone"></i></span>
                             <input type="phone" class="form-control" placeholder="手机号码">
                         </div>
@@ -207,57 +207,6 @@
         </div>
     </div>
 </div>
-
-<div class="modal fade" id="editPWD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="box box-primary">
-                <div class="box-header">
-                    <h3 class="box-title">修改密码</h3>
-                </div>
-                <div class="box-body">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa-lock"></i></span>
-                            <input type="phone" class="form-control" placeholder="原密码">
-                            <input type="phone" class="form-control" placeholder="新密码">
-                            <input type="phone" class="form-control" placeholder="重复新密码">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">保存</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="editHead" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="box box-primary">
-                <div class="box-header">
-                    <h3 class="box-title">修改头像</h3>
-                </div>
-                <div class="box-body">
-                    <div class="form-group">
-                        <div class="input-group userhead">
-                            <img src="assets/images/user-4.png" alt="">
-                            <input type="file" name="" id="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">保存</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js" defer async></script>
 <script src="assets/js/TweenMax.min.js" defer async></script>
