@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="金考卷 一站式试卷成型系统"/>
+    <meta name="author" content="ztone"/>
+
+    <title>金考卷</title>
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+    <link rel="stylesheet" href="assets/css/xenon-forms.css">
+    <link rel="stylesheet" href="assets/css/xenon-components.css">
+    <link rel="stylesheet" href="assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/main-style.css">
+
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body class="page-body skin-white main-page">
+<div class="page-container">
+    <div class="sidebar-menu toggle-others fixed">
+
+        <div class="sidebar-menu-inner">
+
+            <header class="logo-env">
+                <div class="logo" style="height: 10px">
+                    <!-- logo -->
+                    <a href="" class="logo-expanded">
+                        <img src="assets/images/logo.png" width="130" alt="金考卷" style="position:relative;top: -16px;">
+                    </a>
+                </div>
+
+                <!-- This will toggle the mobile menu and will be visible only on mobile devices -->
+                <div class="mobile-menu-toggle visible-xs">
+
+                    <a href="#" data-toggle="mobile-menu">
+                        <i class="fa-bars"></i>
+                    </a>
+                </div>
+            </header>
+
+            <ul id="main-menu" class="main-menu">
+                <li class="has-sub expanded">
+                    <a href="#">
+                        <i class="fa-cloud"></i>
+                        <span class="title">题库系统</span>
+                    </a>
+                    <ul style="display: block;">
+                        <li class="active">
+                            <a href="#">
+                                <i class="iconfont" style="font-size: 13px;"></i>
+                                <span class="title">云题库</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                <i class="iconfont" style="font-size: 13px;"></i>
+                                <span class="title">私有题库</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                <i class="iconfont"></i>
+                                <span class="title">选题记录</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-users"></i>
+                        <span class="title">用户面板</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe607;</i>
+                                <span class="title">个性设置</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe603;</i>
+                                <span class="title">收藏夹</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-gear"></i>
+                        <span class="title">控制面板</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe600;</i>
+                                <span class="title">系统设置</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont">&#xe605;</i>
+                                <span class="title">用户管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--侧边栏-->
+
+        </div>
+
+    </div>
+
+    <div class="main-content">
+
+        <div class="search-ini">
+            <h2>
+                <img src="assets/images/logo.png" alt="金考卷" width="130"><i class="icon-rights"></i>️ 智能搜题
+            </h2>
+            <div class="search-box">
+                <form action="" class="form-horizontal">
+                    <div class="form-group has-info flexed-center">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="main-keywords" placeholder="搜索...">
+                            <div class="suggestion">
+                                <ul>
+                                    <li>语文</li>
+                                    <li>数学</li>
+                                    <li>英语</li>
+                                </ul>
+                            </div>
+                            <div class="hot">
+                                <ul class="flexed-center">
+                                    <li>热词 :</li>
+                                    <li>语文</li>
+                                    <li>数学</li>
+                                    <li>英语</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="main-result">
+            <table class="table table-hover main-table">
+                <tbody>
+                <tr>
+                    <th>ID</th>
+                    <th>题目名称</th>
+                    <th>题目标签</th>
+                    <th>题目类型</th>
+                    <th>题目公开者</th>
+                    <th class="point">使用次数<i class="fa fa-angle-down"></i></th>
+                    <th class="point">反馈评分<i class="fa fa-angle-down"></i></th>
+                    <th class="point">添加时间<i class="fa fa-angle-down"></i></th>
+                    <th>操作</th>
+                </tr>
+                <tr id="item-89">
+                    <td>89</td>
+                    <td class="item-tittle">智力测试</td>
+                    <td><a></a>&nbsp;</td>
+                    <td>客观题</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>60</td>
+                    <td>20160810</td>
+                    <td>
+                        <button type="button" class="btn btn-link" onclick="collect(89)">收藏</button>
+                        <button type="button" class="btn btn-link" onclick="getinfo(89)">查看详情</button>
+                        <button type="button" class="btn btn-link addcart" onclick="addToCart(89,event)">添加至待选区</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <ul class="pagination flexed-center">
+                <li class="paginate_button previous">
+                    <a href="#" onclick="prew()">上一页</a>
+                </li>
+                <li class="paginate_button next">
+                    <a href="#" onclick="next()">下一页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cart-fixed">
+    <div class="left">
+        <i class="fa-shopping-cart" style="position: relative;top: 2px;"></i>
+    </div>
+    <div class="right">您的待选区是空的</div>
+    <div class="right-open">
+        隐藏 <i class="fa-toggle-off"></i>
+    </div>
+    <div class="cart-main">
+        <ul id="cart-items">
+
+        </ul>
+    </div>
+    <div class="bottom" onclick="goToEdit()">
+        去编辑
+    </div>
+</div>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js" defer async></script>
+<script src="assets/js/TweenMax.min.js" defer async></script>
+<script src="assets/js/resizeable.js" defer async></script>
+<!--<script src="assets/js/joinable.js" defer async></script>-->
+<script src="assets/js/xenon-api.js" defer async></script>
+<script src="assets/js/xenon-toggles.js" defer async></script>
+<!--<script src="assets/js/xenon-widgets.js" defer async></script>-->
+<script src="assets/js/toastr/toastr.min.js" defer async></script>
+<script src="assets/js/xenon-custom.js" defer async></script>
+<script src="assets/js/cart-main.js"></script>
+</body>
+</html>
