@@ -14,4 +14,25 @@
       margin-left: 20px;
     }
   }
+  .userhead{
+    width:100%;
+    text-align: center;
+    img{
+      width:80px;
+      height:80px;
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    input{
+      outline: none;
+      padding-top: 6px;
+      height:30px;
+      width:100%;
+      margin-top: 20px;
+      display: block;
+      border:1px solid rgba(0,0,0,0.08);
+      border-radius: 3px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.08);
+    }
+  }
 }

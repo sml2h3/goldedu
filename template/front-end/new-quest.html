@@ -152,7 +152,7 @@
                     <label>添加答案(拖动可排序)</label><br>
                     <div id="sort" class="answersort ui-sortable">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="answer">
                         <div class="answer add" data-toggle="modal" data-target="#addanswer">
                             <span class="fa fa-plus"></span>
                         </div>
@@ -167,7 +167,8 @@
                     <div class="box-body">
                         <div class="checkbox">
                             <label>
-                                <div class="cbr-replaced cbr-success" onclick="$('.cbr-replaced').toggleClass('cbr-checked')">
+                                <div class="cbr-replaced cbr-success"
+                                     onclick="$('.cbr-replaced').toggleClass('cbr-checked')">
                                     <div class="cbr-input"><input type="checkbox" class="cbr cbr-done"></div>
                                     <div class="cbr-state"><span></span></div>
                                 </div>
@@ -188,7 +189,8 @@
                             <form>
                                 <div class="form-group">
                                     <label for="realasr">正确答案(序号)</label>
-                                    <input type="text" class="form-control" id="realasr" placeholder="正确答案(序号)" value="">
+                                    <input type="text" class="form-control" id="realasr" placeholder="正确答案(序号)"
+                                           value="">
                                 </div>
                                 <div class="form-group">
                                     <label for="realrsn">答案分析</label>
@@ -228,7 +230,59 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="addanswer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">添加答案</h3>
+            </div>
+            <div class="box-body">
+                <form>
+                    <div class="form-group">
+                        <label for="xx">选项名</label>
+                        <input type="text" id="xx" placeholder="选项名" class="form-control" style="margin:15px 0;">
+                        <script id="content-editor" name="content" type="text/plain" style="width:100%;"></script>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="addbutton" data-dismiss="modal" onclick="addAnswer()">添加答案</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">修改答案</h3>
+            </div>
+            <div class="box-body">
+                <form>
+                    <div class="form-group">
+                        <label for="xx">选项名</label>
+                        <input type="text" id="xx2" placeholder="选项名" class="form-control" style="margin:15px 0;">
+                        <script id="content-editor2" name="content" type="text/plain" style="width:100%;"></script>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="editInsert" data-dismiss="modal" onclick="insertEdit()">修改答案</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
 <script src="assets/js/bootstrap.min.js" defer async></script>
 <script src="assets/js/TweenMax.min.js" defer async></script>
 <script src="assets/js/resizeable.js" defer async></script>
@@ -242,8 +296,33 @@
 <script src="../../ueditor/ueditor.all.min.js"></script>
 <script>
     $(function () {
-        var ue = UE.getEditor("titleEditor");
-    })
+        ue = UE.getEditor("titleEditor");
+        ue2 = UE.getEditor("content-editor");
+        ue3 = UE.getEditor("content-editor2");
+        $("#answer").sortable();
+    });
+    function addAnswer() {
+        var choice = $("#xx").val();
+        var content =  ue2.getContent();
+        $("#answer").append('<div class="answer" onclick="editAnswer(this)"><span>'+ choice + '</span><input type="hidden"  name="" value="'+ content +'"></div>');
+        $("#xx").val("");
+        ue2.setContent("");
+    }
+    function editAnswer(e) {
+        $(e).addClass("will-edit");
+        var choice = $(e).find("span").html();
+        var content = $(e).find("input").val();
+        $("#xx2").val(choice);
+        ue3.setContent(content);
+        $("#edit").modal();
+    }
+    function insertEdit() {
+        var choice = $("#xx2").val();
+        var content = ue3.getContent();
+        $(".will-edit").find("span").html(choice);
+        $(".will-edit").find("input").val(content);
+        $(".will-edit").removeClass("will-edit");
+    }
 </script>
 </body>
 </html>
