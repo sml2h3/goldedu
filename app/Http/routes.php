@@ -28,6 +28,7 @@ Route::group(['prefix'=>'admin','middleware'=>['admin.login','web']],function(){
     //集成了登陆的用户权限中间件,用于页面的跳转访问
         //访问控制面板
     Route::get('dash','Admin\ViewController@dashview');
+    Route::get('user','Admin\ViewController@userview');
 });
 Route::group(['prefix'=>'admin'],function(){
     //集成了登录的用户访问的权限,用于api的接口,返回值为json格式

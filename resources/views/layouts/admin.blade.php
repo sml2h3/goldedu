@@ -98,6 +98,7 @@
                         </li>
                     </ul>
                 </li>
+                @if($is_super == '1'||$permission <=1)
                 <li>
                     <a href="#">
                         <i class="fa-gear"></i>
@@ -111,13 +112,14 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="user">
                                 <i class="iconfont">&#xe605;</i>
                                 <span class="title">用户管理</span>
                             </a>
                         </li>
                     </ul>
                 </li>
+                    @endif
             </ul>
             <!--侧边栏-->
 

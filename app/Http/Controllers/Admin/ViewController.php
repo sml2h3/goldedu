@@ -35,5 +35,8 @@ class ViewController extends CommonController
     public function dashview(){
         return view('admin.dash',$this->user_info);
     }
+    public function userview(){
+        return view('admin.user',$this->user_info);
+    }
 
 }

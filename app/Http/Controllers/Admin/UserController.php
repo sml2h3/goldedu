@@ -67,7 +67,69 @@ class UserController extends CommonController
     public function userAction($action){
         switch ($action){
             case 'add':
-                return $this->user_info['username'];
+                $username = Input::get('username');
+                $password = Input::get('password');
+                $permission = Input::get('permission');
+                $encode_pass = Crypt::encrypt($password);
+                $info = array(
+                    "edu_name"=>$username,
+                    "edu_pass"=>$encode_pass
+                );
+                switch ($permission){
+                    case '0':
+                        //超级管理员
+                        $info['edu_is_super'] = '1';
+                        $info['edu_permission'] = "";
+                        break;
+                    case '1':
+                        $info['edu_is_super'] = '0';
+                        $info['edu_permission'] = '1';
+                        break;
+                    case '2':
+                        $info['edu_is_super'] = '0';
+                        $info['edu_permission'] = '2';
+                        break;
+                    default:
+                        $array = array(
+                            "result" => "0",
+                            "reason" => "信息不完整"
+                        );
+                        return json_encode($array,JSON_UNESCAPED_SLASHES);
+                }
+                if ($this->user_info['is_super']=='1'||$this->user_info['permission']<$info['edu_permission']){
+                    $already = Admin::where('edu_name',$info['edu_name'])->first();
+                    if ($already != ""){
+                        $array = array(
+                            "result" => "0",
+                            "reason" => "用户已经存在"
+                        );
+                        return json_encode($array,JSON_UNESCAPED_SLASHES);
+                    }
+                    $Id = Admin::insertGetId($info);
+                    //只有超级用户管理权限或者满足当前权限值小于创建的权限值即可创建
+                    if (is_numeric($Id)){
+                        $array = array(
+                            "result" => "1",
+                            "reason" => $Id
+                        );
+                        return json_encode($array,JSON_UNESCAPED_SLASHES);
+                    }else{
+                        $array = array(
+                            "result" => "0",
+                            "reason" => "添加失败,请确保您的用户权限有权利创建此用户,或者发生系统故障,请与管理员联系"
+                        );
+                        return json_encode($array,JSON_UNESCAPED_SLASHES);
+                    }
+                }else{
+                    $array = array(
+                        "result" => "0",
+                        "reason" => "添加失败,请确保您的用户权限有权利创建此用户,或者发生系统故障,请与管理员联系"
+                    );
+                    return json_encode($array,JSON_UNESCAPED_SLASHES);
+                }
+                break;
+            case 'edit':
+
                 break;
         }
     }
