@@ -33,10 +33,16 @@ class ViewController extends CommonController
     //访问页面
         //访问控制面板
     public function dashview(){
-        return view('admin.dash',$this->user_info);
+        $info = array();
+        $info['user'] = $this->user_info;
+        return view('admin.dash',$info);
     }
     public function userview(){
-        return view('admin.user',$this->user_info);
+        $result = Admin::simplePaginate(15);
+        $info = array();
+        $info['list'] = $result;
+        $info['user'] = $this->user_info;
+        return view('admin.user',$info);
     }
 
 }

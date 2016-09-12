@@ -98,7 +98,7 @@
                         </li>
                     </ul>
                 </li>
-                @if($is_super == '1'||$permission <=1)
+                @if($user['is_super'] == '1'||$user['permission'] <= 1)
                 <li>
                     <a href="#">
                         <i class="fa-gear"></i>

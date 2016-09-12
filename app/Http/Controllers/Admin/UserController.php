@@ -131,6 +131,20 @@ class UserController extends CommonController
             case 'edit':
 
                 break;
+            case 'del':
+                $Id = Input::get('Id');
+                $result = Admin::where('Id',$Id)->first();
+                if($this->user_info['is_super'] == '1'|| $this->user_info['permission']<$result->edu_permission){
+                    $result = Admin::where('Id',$Id)->delete();
+                    return $result;
+                }else{
+                    $array = array(
+                        "result" => "0",
+                        "reason" => "删除失败,权限不足"
+                    );
+                    return json_encode($array,JSON_UNESCAPED_SLASHES);
+                }
+                break;
         }
     }
 }

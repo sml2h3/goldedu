@@ -11,41 +11,32 @@
                             <button class="btn btn-primary" type="button" id="adduser_button" onclick="$('#addUsermodal').modal()"><i class="fa fa-plus"></i>添加用户</button>
                         </div>
                         <table class="table table-hover user_list">
-                            <tbody><tr>
+                            <tbody>
+                            <tr>
                                 <th>Id</th>
                                 <th>用户名</th>
                                 <th>用户级别</th>
                                 <th>操作</th>
                             </tr>
-                            <tr class="table_tr_1">
-                                <td>1</td>
-                                <td>1</td>
-                                <td><span class="label label-success label_1">超级管理员</span></td>
-                                <td><button type="button" class="btn btn-link" onclick="deluser(1)">删除</button><button type="button" class="btn btn-link" onclick="change(1,0)">变更权限</button></td>
-                            </tr><tr class="table_tr_3">
-                                <td>3</td>
-                                <td>dq</td>
-                                <td><span class="label label-success label_3">超级管理员</span></td>
-                                <td><button type="button" class="btn btn-link" onclick="deluser(3)">删除</button><button type="button" class="btn btn-link" onclick="change(3,0)">变更权限</button></td>
-                            </tr><tr class="table_tr_31">
-                                <td>31</td>
-                                <td>HR</td>
-                                <td><span class="label label-primary label_31">HR</span></td>
-                                <td><button type="button" class="btn btn-link" onclick="deluser(31)">删除</button><button type="button" class="btn btn-link" onclick="change(31,1)">变更权限</button></td>
-                            </tr><tr class="table_tr_32">
-                                <td>32</td>
-                                <td>项目组</td>
-                                <td><span class="label label-warning label_32">项目组</span></td>
-                                <td><button type="button" class="btn btn-link" onclick="deluser(32)">删除</button><button type="button" class="btn btn-link" onclick="change(32,2)">变更权限</button></td>
-                            </tr>                  </tbody></table>
+                            @foreach($list as $l)
+                            <tr class="table_tr_{{ $l['Id'] }}">
+                                <td>{{ $l['Id'] }}</td>
+                                <td>{{ $l['edu_name'] }}</td>
+                                @if( $l['edu_is_super'] == '1' )
+                                    <td><span class="label label-success label_{{ $l['Id'] }}">超级管理员</span></td>
+                                @elseif( $l['edu_permission'] == '1' )
+                                    <td><span class="label label-primary label_{{ $l['Id'] }}">HR</span></td>
+                                @else
+                                    <td><span class="label label-warning label_{{ $l['Id'] }}">项目组</span></td>
+                                    @endif
+                                <td><button type="button" class="btn btn-link" onclick="deluser({{ $l['Id'] }})">删除</button><button type="button" class="btn btn-link" onclick="change({{ $l['Id'] }},0)">变更权限</button></td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                         <div class="dataTables_paginate paging_simple_numbers" style="text-align: center;">
                             <div hidden="" class="pageCount">1</div>
-                            <ul class="pagination">
-                                <li class="paginate_button previous">
-                                    <a href="#" onclick="prew()">上一页</a>
-                                </li><li class="paginate_button next">
-                                    <a href="#" onclick="next()">下一页</a></li>
-                            </ul>
+                            {!! $list->links() !!}
                         </div>
                         <input id="changeId" type="hidden" value="">
                     </div>
@@ -62,7 +53,7 @@
                             <form>
                                 <div class="form-group">
                                     <select class="form-control" id="power_change_select">
-                                        @if($is_super == '1')
+                                        @if($user['is_super'] == '1')
                                             <option value="0">超级管理员</option>
                                         @endif
                                         <option value="1">普通管理员</option>
@@ -106,7 +97,7 @@
                                 <div class="form-group">
                                     <label for="power_select">用户权限</label>
                                     <select class="form-control" id="power_select">
-                                        @if($is_super == '1')
+                                        @if($user['is_super'] == '1')
                                             <option value="0">超级管理员</option>
                                         @endif
                                         <option value="1">普通管理员</option>
@@ -131,6 +122,18 @@
             $('#power_change_box').modal({
                 keyboard:false
             });
+        }
+        function deluser(Id){
+            $.ajax({
+                url:"user/del",
+                type:"post",
+                data:{
+                    Id:Id
+                },
+                success:function (result) {
+                    alert(result)
+                }
+            })
         }
         $('#adduser').click(function(){
             $.ajax({
