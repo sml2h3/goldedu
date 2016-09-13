@@ -29,7 +29,7 @@
 
 
 </head>
-<body class="page-body skin-white">
+<body class="page-body skin-white main-page">
 <div class="page-container">
     <div class="sidebar-menu toggle-others fixed">
 
