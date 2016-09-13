@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('content')
+    <body class="page-body skin-white new-quest">
+    @endsection
 @section('content1')
     <link rel="stylesheet" href="{{ asset('assets/ueditor/themes/default/css/ueditor.min.css') }}">
     <div class="main-content">

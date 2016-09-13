@@ -29,7 +29,7 @@
 
 
 </head>
-<body class="page-body skin-white main-page">
+@yield('content')
 <div class="page-container">
     <div class="sidebar-menu toggle-others fixed">
 
@@ -60,7 +60,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="dash">
                                 <i class="iconfont" style="font-size: 13px;">&#xe606;</i>
                                 <span class="title">云题库</span>
                             </a>
