@@ -37,6 +37,11 @@ class ViewController extends CommonController
         $info['user'] = $this->user_info;
         return view('admin.dash',$info);
     }
+    public function newquesView(){
+        $info = array();
+        $info['user'] = $this->user_info;
+        return view('admin.newques',$info);
+    }
     public function userview(){
         $result = Admin::simplePaginate(15);
         $info = array();

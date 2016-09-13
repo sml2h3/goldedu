@@ -1,131 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="金考卷 一站式试卷成型系统"/>
-    <meta name="author" content="ztone"/>
-
-    <title>金考卷</title>
-
-    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
-    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/xenon-core.css">
-    <link rel="stylesheet" href="assets/css/xenon-forms.css">
-    <link rel="stylesheet" href="assets/css/xenon-components.css">
-    <link rel="stylesheet" href="assets/css/xenon-skins.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel="stylesheet" href="../../ueditor/themes/default/css/ueditor.min.css">
-    <link rel="stylesheet" href="assets/css/main-style.css">
-
-
-    <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-
-</head>
-<body class="page-body skin-white new-quest">
-<div class="page-container">
-    <div class="sidebar-menu toggle-others fixed">
-
-        <div class="sidebar-menu-inner">
-
-            <header class="logo-env">
-                <div class="logo" style="height: 10px">
-                    <!-- logo -->
-                    <a href="" class="logo-expanded">
-                        <img src="assets/images/logo.png" width="130" alt="金考卷" style="position:relative;top: -16px;">
-                    </a>
-                </div>
-
-                <!-- This will toggle the mobile menu and will be visible only on mobile devices -->
-                <div class="mobile-menu-toggle visible-xs">
-
-                    <a href="#" data-toggle="mobile-menu">
-                        <i class="fa-bars"></i>
-                    </a>
-                </div>
-            </header>
-
-            <ul id="main-menu" class="main-menu">
-                <li class="has-sub expanded">
-                    <a href="#">
-                        <i class="fa-cloud"></i>
-                        <span class="title">题库系统</span>
-                    </a>
-                    <ul style="display: block;">
-                        <li>
-                            <a href="#">
-                                <i class="iconfont" style="font-size: 13px;"></i>
-                                <span class="title">云题库</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#">
-                                <i class="iconfont" style="font-size: 13px;"></i>
-                                <span class="title">私有题库</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#">
-                                <i class="iconfont"></i>
-                                <span class="title">选题记录</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa-users"></i>
-                        <span class="title">用户面板</span>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe607;</i>
-                                <span class="title">个性设置</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe603;</i>
-                                <span class="title">收藏夹</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa-gear"></i>
-                        <span class="title">控制面板</span>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe600;</i>
-                                <span class="title">系统设置</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="iconfont">&#xe605;</i>
-                                <span class="title">用户管理</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <!--侧边栏-->
-
-        </div>
-
-    </div>
-
+@extends('layouts.admin')
+@section('content1')
+    <link rel="stylesheet" href="{{ asset('assets/ueditor/themes/default/css/ueditor.min.css') }}">
     <div class="main-content">
         <div class="content-box">
             <div class="col-sm-8">
@@ -152,7 +27,7 @@
                     <label>添加答案(拖动可排序)</label><br>
                     <div id="sort" class="answersort ui-sortable">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="answer">
                         <div class="answer add" data-toggle="modal" data-target="#addanswer">
                             <span class="fa fa-plus"></span>
                         </div>
@@ -167,7 +42,8 @@
                     <div class="box-body">
                         <div class="checkbox">
                             <label>
-                                <div class="cbr-replaced cbr-success" onclick="$('.cbr-replaced').toggleClass('cbr-checked')">
+                                <div class="cbr-replaced cbr-success"
+                                     onclick="$('.cbr-replaced').toggleClass('cbr-checked')">
                                     <div class="cbr-input"><input type="checkbox" class="cbr cbr-done"></div>
                                     <div class="cbr-state"><span></span></div>
                                 </div>
@@ -188,7 +64,8 @@
                             <form>
                                 <div class="form-group">
                                     <label for="realasr">正确答案(序号)</label>
-                                    <input type="text" class="form-control" id="realasr" placeholder="正确答案(序号)" value="">
+                                    <input type="text" class="form-control" id="realasr" placeholder="正确答案(序号)"
+                                           value="">
                                 </div>
                                 <div class="form-group">
                                     <label for="realrsn">答案分析</label>
@@ -227,23 +104,86 @@
             </div>
         </div>
     </div>
-</div>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js" defer async></script>
-<script src="assets/js/TweenMax.min.js" defer async></script>
-<script src="assets/js/resizeable.js" defer async></script>
-<!--<script src="assets/js/joinable.js" defer async></script>-->
-<script src="assets/js/xenon-api.js" defer async></script>
-<script src="assets/js/xenon-toggles.js" defer async></script>
-<!--<script src="assets/js/xenon-widgets.js" defer async></script>-->
-<script src="assets/js/toastr/toastr.min.js" defer async></script>
-<script src="assets/js/xenon-custom.js" defer async></script>
-<script type="text/javascript" src="../../ueditor/ueditor.config.js"></script>
-<script src="../../ueditor/ueditor.all.min.js"></script>
-<script>
-    $(function () {
-        var ue = UE.getEditor("titleEditor");
-    })
-</script>
-</body>
-</html>
+    <div class="modal fade" id="addanswer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">添加答案</h3>
+                </div>
+                <div class="box-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="xx">选项名</label>
+                            <input type="text" id="xx" placeholder="选项名" class="form-control" style="margin:15px 0;">
+                            <script id="content-editor" name="content" type="text/plain" style="width:100%;"></script>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="addbutton" data-dismiss="modal" onclick="addAnswer()">添加答案</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">修改答案</h3>
+                </div>
+                <div class="box-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="xx">选项名</label>
+                            <input type="text" id="xx2" placeholder="选项名" class="form-control" style="margin:15px 0;">
+                            <script id="content-editor2" name="content" type="text/plain" style="width:100%;"></script>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="editInsert" data-dismiss="modal" onclick="insertEdit()">修改答案</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{asset('assets/ueditor/ueditor.config.js')}}"></script>
+    <script src="{{asset('assets/ueditor/ueditor.all.min.js')}}"></script>
+    <script src="{{asset('assets/js/toastr/toastr.min.js')}}"></script>
+    <script>
+        $(function () {
+            ue = UE.getEditor("titleEditor");
+            ue2 = UE.getEditor("content-editor");
+            ue3 = UE.getEditor("content-editor2");
+            $("#answer").sortable();
+        });
+        function addAnswer() {
+            var choice = $("#xx").val();
+            var content =  ue2.getContent();
+            $("#answer").append('<div class="answer" onclick="editAnswer(this)"><span>'+ choice + '</span><input type="hidden"  name="" value="'+ content +'"></div>');
+            $("#xx").val("");
+            ue2.setContent("");
+        }
+        function editAnswer(e) {
+            $(e).addClass("will-edit");
+            var choice = $(e).find("span").html();
+            var content = $(e).find("input").val();
+            $("#xx2").val(choice);
+            ue3.setContent(content);
+            $("#edit").modal();
+        }
+        function insertEdit() {
+            var choice = $("#xx2").val();
+            var content = ue3.getContent();
+            $(".will-edit").find("span").html(choice);
+            $(".will-edit").find("input").val(content);
+            $(".will-edit").removeClass("will-edit");
+        }
+    </script>
+    @endsection

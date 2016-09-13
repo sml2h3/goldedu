@@ -18,9 +18,10 @@
     <link rel="stylesheet" href="{{asset('assets/css/xenon-components.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/xenon-skins.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/main-style.css')}}">
     {{--<link rel="stylesheet" href="{{asset('assets/css/login.css')}}">--}}
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('assets/css/main-style.css')}}">
+    <script src="{{asset('assets/js/jquery-ui/jquery-ui.min.js')}}"></script>
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -65,7 +66,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="nques">
                                 <i class="iconfont" style="font-size: 13px;">&#xe608;</i>
                                 <span class="title">私有题库</span>
                             </a>
@@ -154,7 +155,6 @@
 <script src="{{asset('assets/js/xenon-api.js')}}"></script>
 <script src="{{asset('assets/js/xenon-toggles.js')}}"></script>
 <script src="{{asset('assets/js/jquery-validate/jquery.validate.min.js')}}"></script>
-<script src="{{asset('assets/js/toastr/toastr.min.js')}}"></script>
 
 
 <!-- JavaScripts initializations and stuff -->

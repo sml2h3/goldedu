@@ -1,0 +1,39 @@
+.new-quest {
+  .content-box {
+    overflow: auto;
+    background: #fff;
+  }
+  h3 {
+    border-top: 2px solid #95cd62;
+    padding: 20px 10px;
+  }
+  label {
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .answer {
+    height: 30px;
+    border: 2px dashed #e3e3e3;
+    color: #95cd62;
+    text-align: center;
+    padding: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .modal-dialog {
+    background: #fff;
+    padding: 15px;
+  }
+  .btn{
+    margin-bottom:0;
+  }
+  #answer{
+    width:100%;
+  }
+  #answer div{
+    float: left;
+    width:25%;
+  }
+}
