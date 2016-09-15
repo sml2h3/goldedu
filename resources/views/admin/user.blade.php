@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('content')
+    <body class="page-body skin-white userSet">
+    @endsection
 @section('content1')
     <div class="main-content">
         <div class="container-fluid">

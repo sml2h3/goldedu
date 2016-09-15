@@ -20,6 +20,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('index',function(){
         return view('admin.index');
     });
+//    Route::get('test','Admin\UserController@test');
     //执行动作
         //登陆操作
     Route::post('login','Admin\UserController@login');
@@ -30,8 +31,9 @@ Route::group(['prefix'=>'admin','middleware'=>['admin.login','web']],function(){
     Route::get('dash','Admin\ViewController@dashview');
     Route::get('user','Admin\ViewController@userview');
     Route::get('nques','Admin\ViewController@newquesView');
+
 });
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin','middleware'=>['admin.user']],function(){
     //集成了登录的用户访问的权限,用于api的接口,返回值为json格式
     Route::post('user/{action}',"Admin\UserController@userAction");
 });

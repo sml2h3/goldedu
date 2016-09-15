@@ -22,7 +22,7 @@ class usermanage
     {
         if (session('username')){
             $result = Admin::where('edu_name',session('username'))->first();
-            if (Crypt::decrypt(session('password')) == Crypt::decrypt($result->edu_pass)){
+            if ($result != null &&Crypt::decrypt(session('password')) == Crypt::decrypt($result->edu_pass)){
 
             }else{
                 return redirect('admin/index')->with('msg','用户信息无效,请重新登录');
