@@ -75,3 +75,20 @@
             </div>
         </div>
         @endsection
+        <div class="cart-fixed">
+            <div class="left">
+                <i class="fa-shopping-cart" style="position: relative;top: 2px;"></i>
+            </div>
+            <div class="right">您的待选区是空的</div>
+            <div class="right-open">
+                隐藏 <i class="fa-toggle-off"></i>
+            </div>
+            <div class="cart-main">
+                <ul id="cart-items">
+
+                </ul>
+            </div>
+            <div class="bottom" onclick="goToEdit()">
+                去编辑
+            </div>
+        </div>

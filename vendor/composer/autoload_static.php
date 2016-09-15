@@ -16,6 +16,7 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '58d42564b4d04c21b1249b6520d48406' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/xunsearch-sdk/lib/XS.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -216,6 +217,11 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
+            1 => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/app',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -271,6 +277,7 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\CommonController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CommonController.php',
+        'App\\Http\\Controllers\\Admin\\QuesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/QuesController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Admin\\ViewController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ViewController.php',
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
@@ -283,6 +290,7 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Middleware\\useright' => __DIR__ . '/../..' . '/app/Http/Middleware/useright.php',
         'App\\Http\\Middleware\\usermanage' => __DIR__ . '/../..' . '/app/Http/Middleware/usermanage.php',
         'App\\Http\\Model\\Admin' => __DIR__ . '/../..' . '/app/Http/Model/Admin.php',
         'App\\Http\\Requests\\Request' => __DIR__ . '/../..' . '/app/Http/Requests/Request.php',
@@ -322,6 +330,17 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         'Cron\\MonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/MonthField.php',
         'Cron\\YearField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/YearField.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
+        'DavinBao\\LaravelXunSearch\\Console\\ClearCommand' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Console/ClearCommand.php',
+        'DavinBao\\LaravelXunSearch\\Console\\RebuildCommand' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Console/RebuildCommand.php',
+        'DavinBao\\LaravelXunSearch\\Facade' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Facade.php',
+        'DavinBao\\LaravelXunSearch\\Model\\Config' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Model/Config.php',
+        'DavinBao\\LaravelXunSearch\\Model\\Factory' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Model/Factory.php',
+        'DavinBao\\LaravelXunSearch\\Model\\SearchTrait' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Model/SearchTrait.php',
+        'DavinBao\\LaravelXunSearch\\Model\\SearchableInterface' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Model/SearchableInterface.php',
+        'DavinBao\\LaravelXunSearch\\Search' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Search.php',
+        'DavinBao\\LaravelXunSearch\\ServiceProvider' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/ServiceProvider.php',
+        'DavinBao\\LaravelXunSearch\\XunSearch\\Xs' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/XunSearch/Xs.php',
+        'DavinBao\\LaravelXunSearch\\XunSearch\\XsSearch' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/XunSearch/XsSearch.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
         'Doctrine\\Instantiator\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php',

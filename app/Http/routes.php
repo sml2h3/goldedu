@@ -35,5 +35,9 @@ Route::group(['prefix'=>'admin','middleware'=>['admin.login','web']],function(){
 });
 Route::group(['prefix'=>'admin','middleware'=>['admin.user']],function(){
     //集成了登录的用户访问的权限,用于api的接口,返回值为json格式
+        //用户操作
     Route::post('user/{action}',"Admin\UserController@userAction");
+        //题目相关
+            //添加题目
+    Route::post('ques/{action}','Admin\QuesController@quesAction');
 });

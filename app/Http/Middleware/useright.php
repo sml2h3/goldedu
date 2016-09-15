@@ -3,7 +3,11 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Redirect;
 
+use Crypt;
+
+use App\Http\Model\Admin;
 class useright
 {
     /**

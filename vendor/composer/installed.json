@@ -3275,7 +3275,7 @@
         },
         "time": "2016-02-06 08:23:47",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "App\\": "app/",
