@@ -16,7 +16,6 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '58d42564b4d04c21b1249b6520d48406' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/xunsearch-sdk/lib/XS.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -31,6 +30,10 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
+        ),
+        'T' => 
+        array (
+            'TomLingham\\Searchy\\' => 19,
         ),
         'S' => 
         array (
@@ -77,7 +80,6 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
-            'DavinBao\\LaravelXunSearch\\' => 26,
         ),
         'C' => 
         array (
@@ -104,6 +106,10 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'TomLingham\\Searchy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tom-lingham/searchy/src',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -205,10 +211,6 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
-        'DavinBao\\LaravelXunSearch\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src',
-        ),
         'ClassPreloader\\' => 
         array (
             0 => __DIR__ . '/..' . '/classpreloader/classpreloader/src',
@@ -220,7 +222,6 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
-            1 => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/app',
         ),
     );
 
@@ -293,6 +294,10 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         'App\\Http\\Middleware\\useright' => __DIR__ . '/../..' . '/app/Http/Middleware/useright.php',
         'App\\Http\\Middleware\\usermanage' => __DIR__ . '/../..' . '/app/Http/Middleware/usermanage.php',
         'App\\Http\\Model\\Admin' => __DIR__ . '/../..' . '/app/Http/Model/Admin.php',
+        'App\\Http\\Model\\Asr' => __DIR__ . '/../..' . '/app/Http/Model/Asr.php',
+        'App\\Http\\Model\\Ques' => __DIR__ . '/../..' . '/app/Http/Model/Ques.php',
+        'App\\Http\\Model\\Tag' => __DIR__ . '/../..' . '/app/Http/Model/Tag.php',
+        'App\\Http\\Model\\TagList' => __DIR__ . '/../..' . '/app/Http/Model/TagList.php',
         'App\\Http\\Requests\\Request' => __DIR__ . '/../..' . '/app/Http/Requests/Request.php',
         'App\\Jobs\\Job' => __DIR__ . '/../..' . '/app/Jobs/Job.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -330,17 +335,6 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         'Cron\\MonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/MonthField.php',
         'Cron\\YearField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/YearField.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
-        'DavinBao\\LaravelXunSearch\\Console\\ClearCommand' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Console/ClearCommand.php',
-        'DavinBao\\LaravelXunSearch\\Console\\RebuildCommand' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Console/RebuildCommand.php',
-        'DavinBao\\LaravelXunSearch\\Facade' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Facade.php',
-        'DavinBao\\LaravelXunSearch\\Model\\Config' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Model/Config.php',
-        'DavinBao\\LaravelXunSearch\\Model\\Factory' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Model/Factory.php',
-        'DavinBao\\LaravelXunSearch\\Model\\SearchTrait' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Model/SearchTrait.php',
-        'DavinBao\\LaravelXunSearch\\Model\\SearchableInterface' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Model/SearchableInterface.php',
-        'DavinBao\\LaravelXunSearch\\Search' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/Search.php',
-        'DavinBao\\LaravelXunSearch\\ServiceProvider' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/ServiceProvider.php',
-        'DavinBao\\LaravelXunSearch\\XunSearch\\Xs' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/XunSearch/Xs.php',
-        'DavinBao\\LaravelXunSearch\\XunSearch\\XsSearch' => __DIR__ . '/..' . '/iscloudx/laravel-xun-search/src/XunSearch/XsSearch.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
         'Doctrine\\Instantiator\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php',
@@ -2925,6 +2919,29 @@ class ComposerStaticInit920d06b8a2b620640b4a8331aaf8cad5
         'Symfony\\Polyfill\\Util\\TestListener' => __DIR__ . '/..' . '/symfony/polyfill-util/TestListener.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'TomLingham\\Searchy\\Facades\\Searchy' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Facades/Searchy.php',
+        'TomLingham\\Searchy\\Interfaces\\MatcherInterface' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Interfaces/MatcherInterface.php',
+        'TomLingham\\Searchy\\Interfaces\\SearchDriverInterface' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Interfaces/SearchDriverInterface.php',
+        'TomLingham\\Searchy\\Matchers\\AcronymMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/AcronymMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\AcronymUnicodeMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/AcronymUnicodeMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\BaseMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/BaseMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\ConsecutiveCharactersMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/ConsecutiveCharactersMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\ConsecutiveCharactersUnicodeMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/ConsecutiveCharactersUnicodeMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\ExactMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/ExactMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\InStringMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/InStringMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\LevenshteinMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/LevenshteinMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\StartOfStringMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/StartOfStringMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\StartOfWordsMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/StartOfWordsMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\StudlyCaseMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/StudlyCaseMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\StudlyCaseUnicodeMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/StudlyCaseUnicodeMatcher.php',
+        'TomLingham\\Searchy\\Matchers\\TimesInStringMatcher' => __DIR__ . '/..' . '/tom-lingham/searchy/src/Matchers/TimesInStringMatcher.php',
+        'TomLingham\\Searchy\\SearchBuilder' => __DIR__ . '/..' . '/tom-lingham/searchy/src/SearchBuilder.php',
+        'TomLingham\\Searchy\\SearchDrivers\\BaseSearchDriver' => __DIR__ . '/..' . '/tom-lingham/searchy/src/SearchDrivers/BaseSearchDriver.php',
+        'TomLingham\\Searchy\\SearchDrivers\\FuzzySearchDriver' => __DIR__ . '/..' . '/tom-lingham/searchy/src/SearchDrivers/FuzzySearchDriver.php',
+        'TomLingham\\Searchy\\SearchDrivers\\FuzzySearchUnicodeDriver' => __DIR__ . '/..' . '/tom-lingham/searchy/src/SearchDrivers/FuzzySearchUnicodeDriver.php',
+        'TomLingham\\Searchy\\SearchDrivers\\LevenshteinSearchDriver' => __DIR__ . '/..' . '/tom-lingham/searchy/src/SearchDrivers/LevenshteinSearchDriver.php',
+        'TomLingham\\Searchy\\SearchDrivers\\SimpleSearchDriver' => __DIR__ . '/..' . '/tom-lingham/searchy/src/SearchDrivers/SimpleSearchDriver.php',
+        'TomLingham\\Searchy\\SearchyServiceProvider' => __DIR__ . '/..' . '/tom-lingham/searchy/src/SearchyServiceProvider.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',

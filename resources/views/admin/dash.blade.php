@@ -13,7 +13,7 @@
                     <form action="" class="form-horizontal">
                         <div class="form-group has-info flexed-center">
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="main-keywords" placeholder="搜索...">
+                                <input type="text" class="form-control" id="main-keywords" name="seek" placeholder="搜索..." value="{{ $seek or '' }}">
                                 <div class="suggestion">
                                     <ul>
                                         <li>语文</li>
@@ -34,6 +34,7 @@
                     </form>
                 </div>
             </div>
+            @if(isset($result))
             <div class="main-result">
                 <table class="table table-hover main-table">
                     <tbody>
@@ -48,31 +49,36 @@
                         <th class="point">添加时间<i class="fa fa-angle-down"></i></th>
                         <th>操作</th>
                     </tr>
+                    @foreach($result as $l)
                     <tr id="item-89">
-                        <td>89</td>
-                        <td class="item-tittle">智力测试</td>
+                        <td>{{ $l->Id }}</td>
+                        <td class="item-tittle">{{ $l->qs_name }}</td>
                         <td><a></a>&nbsp;</td>
-                        <td>客观题</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>60</td>
-                        <td>20160810</td>
                         <td>
-                            <button type="button" class="btn btn-link" onclick="collect(89)">收藏</button>
-                            <button type="button" class="btn btn-link" onclick="getinfo(89)">查看详情</button>
-                            <button type="button" class="btn btn-link addcart" onclick="addToCart(89,event)">添加至待选区</button>
+                            @if($l->qs_type == '1')
+                                选择题
+                                @elseif($l->qs_type == '2')
+                                    填空题
+                                @else
+                                    客观题
+                                @endif
+                        </td>
+                        <td>{{ $l->qs_owner }}</td>
+                        <td>{{ $l->qs_use_num }}</td>
+                        <td>{{ $l->qs_comment }}</td>
+                        <td>{{ date("Y-m-d",$l->qs_addtime) }}</td>
+                        <td>
+                            <button type="button" class="btn btn-link" onclick="collect({{ $l->Id }})">收藏</button>
+                            <button type="button" class="btn btn-link" onclick="getinfo({{ $l->Id }})">查看详情</button>
+                            <button type="button" class="btn btn-link addcart" onclick="addToCart({{ $l->Id }},event)">添加至待选区</button>
                         </td>
                     </tr>
+                        @endforeach
                     </tbody>
                 </table>
-                <ul class="pagination flexed-center">
-                    <li class="paginate_button previous">
-                        <a href="#" onclick="prew()">上一页</a>
-                    </li>
-                    <li class="paginate_button next">
-                        <a href="#" onclick="next()">下一页</a></li>
-                </ul>
             </div>
+                {!! $result->appends(['seek' => $seek ])->links() !!}
+                @endif
         </div>
         @endsection
         <div class="cart-fixed">

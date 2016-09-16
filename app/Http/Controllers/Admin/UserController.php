@@ -11,8 +11,13 @@ use App\Http\Controllers\Admin\CommonController;
 use App\Http\Model\Admin;
 use Crypt,Redirect;
 use Illuminate\Support\Facades\Input;
+use Searchy;
 class UserController extends CommonController
 {
+    public function search(){
+        $result = Searchy::qtn('qs_title', 'qs_name')->query('d')->getQuery()->simplePaginate(2);
+        return json_encode($result,JSON_UNESCAPED_UNICODE);
+    }
     private $user_info = array();
     public function __construct()
     {

@@ -9,6 +9,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Admin\CommonController;
 
 use App\Http\Model\Admin;
+
+use Illuminate\Support\Facades\Input;
+use TomLingham\Searchy\Facades\Searchy;
 class ViewController extends CommonController
 {
     private $user_info = array();
@@ -35,6 +38,11 @@ class ViewController extends CommonController
     public function dashview(){
         $info = array();
         $info['user'] = $this->user_info;
+        if (Input::get('seek')){
+            $result = Searchy::qtn('qs_title', 'qs_name')->query(Input::get('seek'))->getQuery()->simplePaginate(15);
+            $info['result'] = $result;
+            $info['seek'] = Input::get('seek');
+        }
         return view('admin.dash',$info);
     }
     public function newquesView(){
