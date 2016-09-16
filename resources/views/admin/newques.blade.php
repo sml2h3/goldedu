@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group">
                     <label>选择题目类型</label>
-                    <select class="form-control">
+                    <select class="form-control" id="ques_type" value="1">
                         <option value="1">选择题</option>
                         <option value="2">填空题</option>
                         <option value="3">客观题</option>
@@ -242,7 +242,7 @@
                     ue.setContent("");
                 }
             })
-        })
+        });
         function attachContext(selector) {
             var val = $(selector).find("span").html();
 //            console.log(val);
