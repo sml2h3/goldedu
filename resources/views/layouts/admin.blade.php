@@ -139,7 +139,20 @@
 <script src="{{asset('assets/js/xenon-api.js')}}"></script>
 <script src="{{asset('assets/js/xenon-toggles.js')}}"></script>
 <script src="{{asset('assets/js/jquery-validate/jquery.validate.min.js')}}"></script>
-
+<script>
+    $(document).ready(function(){
+//        $('input[type=checkbox]').lc_switch();
+        var title = '{{$_SERVER['REQUEST_URI']}}';
+        console.log(title)
+        var title = title.split('/');
+        console.log(title[2])
+        title = title[2].split('?');
+        title = title[0];
+        $('a[href='+title+']').addClass("active");
+        $('a[href='+title+']').parent().addClass("active");
+        $('a[href='+title+']').parent().parent().parent().addClass("active").addClass("opened");
+    })
+</script>
 
 <!-- JavaScripts initializations and stuff -->
 <script src="{{asset('assets/js/xenon-custom.js')}}"></script>
