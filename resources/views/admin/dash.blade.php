@@ -1,6 +1,7 @@
 @extends('layouts.admin')
     @section('content')
         <body class="page-body skin-white main-page">
+        <script src="{{asset('assets/js/cart-main.js')}}"></script>
         @endsection
     @section('content1')
         <div class="main-content">
@@ -13,7 +14,7 @@
                     <form action="" class="form-horizontal">
                         <div class="form-group has-info flexed-center">
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="main-keywords" name="seek" placeholder="搜索..." value="{{ $seek or '' }}">
+                                <input type="text" class="form-control" id="main-keywords" name="seek" placeholder="搜索..." value="{{ $seek or '' }}" autocomplete="off">
                                 <div class="suggestion">
                                     <ul>
                                         <li>语文</li>

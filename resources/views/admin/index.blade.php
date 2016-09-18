@@ -20,7 +20,11 @@
 	<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 	<link rel="stylesheet" href="{{asset('assets/css/login.css')}}">
 	<script src="{{asset('assets/js/jquery.min.js')}}"></script>
-
+	<style>
+		:-webkit-autofill{
+			box-shadow: 0 0 0 100px #fff inset;
+		}
+	</style>
 	<!--[if lt IE 9]>
 	<script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
 	<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -122,24 +126,7 @@
 				</form>
 
 				<!-- External login -->
-				<div class="external-login">
-					<a href="#" class="twitter">
-						<i class="fa-qq"></i>
-						QQ登录
-					</a>
 
-					<!--
-					<a href="#" class="twitter">
-						<i class="fa-twitter"></i>
-						Login with Twitter
-					</a>
-
-					<a href="#" class="gplus">
-						<i class="fa-google-plus"></i>
-						Login with Google Plus
-					</a>
-					 -->
-				</div>
 
 			</div>
 

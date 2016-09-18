@@ -57,5 +57,10 @@ class ViewController extends CommonController
         $info['user'] = $this->user_info;
         return view('admin.user',$info);
     }
+    public function outputview(){
+        $info = array();
+        $info['user'] = $this->user_info;
+        return view('admin.output',$info);
+    }
 
 }
