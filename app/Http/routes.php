@@ -14,7 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('test','Admin\UserController@search');
 Route::group(['prefix'=>'admin'],function(){
     //访问页面
         //访问登陆页面

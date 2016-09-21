@@ -3,6 +3,13 @@
     <link rel="stylesheet" href="{{asset('assets/css/context.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/loaders.css')}}">
     <body class="page-body skin-white new-quest">
+    <style>
+        .answer.add{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
     @endsection
     @section('content1')
         <link rel="stylesheet" href="{{ asset('assets/ueditor/themes/default/css/ueditor.min.css') }}">
@@ -124,9 +131,6 @@
                 $("#answer").sortable();
             });
             function addAnswer() {
-                if (!confirm("您确定要添加这个答案吗？")) {
-                    return;
-                }
 //            var choice = $("#xx").val();
 //            var content =  ue2.getContent();
 //            $("#answer").append('<div class="answer" onclick="editAnswer(this)"><span>'+ choice + '</span><input type="hidden"  name="" value="'+ content +'"></div>');
@@ -137,7 +141,7 @@
                     alert('已存在相同选项,请重新输入');
                     return;
                 }
-                ;
+
                 var content = ue2.getContent();
                 sessionStorage.setItem(choice, content);
                 if ($('.answer_box').length <= 0) {
@@ -154,24 +158,20 @@
             }
             function insertEdit() {
                 //修改答案
-                if (confirm("您确定要修改这个答案吗？")) {
-                    var xuanxiang = $('#xx2').val();
-                    var content = ue3.getContent();
-                    var editxx = $('#editxx').val();
-                    sessionStorage.setItem(xuanxiang, content);
-                    $("input[value=" + editxx + "]").val(xuanxiang);
-                    // $('#sort').append("<input hidden class='asr_arr' name='asr_arr[]' value='"+xuanxiang+"'>");
-                    attachContext(".answer_" + xuanxiang);
-                    $('.answer_' + editxx).removeClass('answer_' + editxx).addClass('answer_' + xuanxiang);
-                    $('cc_' + editxx).removeClass('cc_' + editxx).addClass('cc_' + xuanxiang).html("已修改");
-                    $('xx_' + editxx).removeClass('xx_' + editxx).addClass('xx_' + xuanxiang).html(xuanxiang);
-                    ue3.setContent('<p>请填写答案内容</p>');
-                    setTimeout(function () {
-                        $('.cc_' + xuanxiang).html("已添加");
-                    }, 2000);
-                } else {
-                    return;
-                }
+                var xuanxiang = $('#xx2').val();
+                var content = ue3.getContent();
+                var editxx = $('#editxx').val();
+                sessionStorage.setItem(xuanxiang, content);
+                $("input[value=" + editxx + "]").val(xuanxiang);
+                // $('#sort').append("<input hidden class='asr_arr' name='asr_arr[]' value='"+xuanxiang+"'>");
+                attachContext(".answer_" + xuanxiang);
+                $('.answer_' + editxx).removeClass('answer_' + editxx).addClass('answer_' + xuanxiang);
+                $('cc_' + editxx).removeClass('cc_' + editxx).addClass('cc_' + xuanxiang).html("已修改");
+                $('xx_' + editxx).removeClass('xx_' + editxx).addClass('xx_' + xuanxiang).html(xuanxiang);
+                ue3.setContent('<p>请填写答案内容</p>');
+                setTimeout(function () {
+                    $('.cc_' + xuanxiang).html("已添加");
+                }, 2000);
             }
             $('#send_right').click(function () {
                 $('.text').toggle();
@@ -230,7 +230,7 @@
                         var data = jQuery.parseJSON(result);
                         $('.text').toggle();
                         $('#loading').toggle();
-                        if (data.result == "1") {
+                        if (data.reason == "成功") {
                             alert("发布成功");
                         } else {
                             alert("发布失败")

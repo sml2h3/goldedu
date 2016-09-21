@@ -1,7 +1,6 @@
 @extends('layouts.admin')
     @section('content')
         <body class="page-body skin-white main-page">
-        <script src="{{asset('assets/js/cart-main.js')}}"></script>
         @endsection
     @section('content1')
         <div class="main-content">
@@ -35,7 +34,6 @@
                     </form>
                 </div>
             </div>
-            @if(isset($result))
             <div class="main-result">
                 <table class="table table-hover main-table">
                     <tbody>
@@ -50,36 +48,10 @@
                         <th class="point">添加时间<i class="fa fa-angle-down"></i></th>
                         <th>操作</th>
                     </tr>
-                    @foreach($result as $l)
-                    <tr id="item-89">
-                        <td>{{ $l->Id }}</td>
-                        <td class="item-tittle">{{ $l->qs_name }}</td>
-                        <td><a></a>&nbsp;</td>
-                        <td>
-                            @if($l->qs_type == '1')
-                                选择题
-                                @elseif($l->qs_type == '2')
-                                    填空题
-                                @else
-                                    客观题
-                                @endif
-                        </td>
-                        <td>{{ $l->qs_owner }}</td>
-                        <td>{{ $l->qs_use_num }}</td>
-                        <td>{{ $l->qs_comment }}</td>
-                        <td>{{ date("Y-m-d",$l->qs_addtime) }}</td>
-                        <td>
-                            <button type="button" class="btn btn-link" onclick="collect({{ $l->Id }})">收藏</button>
-                            <button type="button" class="btn btn-link" onclick="getinfo({{ $l->Id }})">查看详情</button>
-                            <button type="button" class="btn btn-link addcart" onclick="addToCart({{ $l->Id }},event)">添加至待选区</button>
-                        </td>
-                    </tr>
-                        @endforeach
+
                     </tbody>
                 </table>
             </div>
-                {!! $result->appends(['seek' => $seek ])->links() !!}
-                @endif
         </div>
         @endsection
         <div class="cart-fixed">
